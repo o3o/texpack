@@ -61,13 +61,13 @@
 #define __GETOPT_H__
 
 /* All the headers include this file. */
-#include <crtdefs.h>
+
 #include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <windows.h>
+
 
 #ifdef __cplusplus
 extern "C"
@@ -105,11 +105,8 @@ extern "C"
 #define BADARG ((*options == ':') ? (int)':' : (int)'?')
 #define INORDER (int)1
 
-#ifndef __CYGWIN__
-#define __progname __argv[0]
-#else
-extern char __declspec(dllimport) * __progname;
-#endif
+
+#define __progname "texpack"
 
 #ifdef __CYGWIN__
   static char EMSG[] = "";
